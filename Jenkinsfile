@@ -23,5 +23,17 @@ pipeline {
 		
 		}
 	}
+	
+	post{
+		always{
+			echo "Running always"
+		}
+		success{
+			echo 'Run only after build success'
+		}
+		failure{
+			echo 'Run only after failure'
+		}
+	}
 
 }
