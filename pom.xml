@@ -26,8 +26,8 @@
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 		<spring-cloud.version>Greenwich.SR3</spring-cloud.version>
 
-		<surefire.version>2.22.1</surefire.version>
-		<failsafe.version>2.22.1</failsafe.version>
+		<surefire.version>3.0.0-M5</surefire.version>
+		<failsafe.version>3.0.0-M5</failsafe.version>
 
 		<jacoco.version>0.8.3</jacoco.version>
 		<jacoco.path>${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar</jacoco.path>
