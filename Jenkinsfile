@@ -44,25 +44,31 @@ pipeline {
 		
 		}*/
 		
+		stage('Package'){
+		  steps{
+		  	sh "mvn package -DskipTests"
+		  }
+		
+		}
+		
 		stage('Build docker image'){
 			steps{
 				script{
-					docker.build("madhusudanjim/devops/jenkins-devops-microservices:${env.BUILD_TAG}")
+					dockerImage = docker.build("madhusudanjim/devops/jenkins-devops-microservices:${env.BUILD_TAG}")
+				}
+			}
+		}
+		
+		stage('Push docker image'){
+			steps{
+				script{
+					docker.withRegistry('', 'dockerHub'){
+						dockerImage.push();
+						dockerImage.push('latest');
+					}
 				}
 			}
 		}
 	}
 	
-	post{
-		always{
-			echo "Running always"
-		}
-		success{
-			echo 'Run only after build success'
-		}
-		failure{
-			echo 'Run only after failure'
-		}
-	}
-
 }
