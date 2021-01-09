@@ -54,7 +54,7 @@ pipeline {
 		stage('Build docker image'){
 			steps{
 				script{
-					dockerImage = docker.build("madhusudanjim/devops/jenkins-devops-microservices:${env.BUILD_TAG}")
+					dockerImage = docker.build("madhusudanjim/devops/currency-exchange-service:${env.BUILD_TAG}")
 				}
 			}
 		}
