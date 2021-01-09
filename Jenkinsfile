@@ -45,9 +45,9 @@ pipeline {
 		}*/
 		
 		stage('Build docker image'){
-			step{
+			steps{
 				script{
-					
+					docker.build("madhusudanjim/devops/jenkins-devops-microservices:${env.BUILD_TAG}")
 				}
 			}
 		}
