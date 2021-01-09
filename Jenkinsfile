@@ -30,7 +30,7 @@ pipeline {
 				sh "mvn clean compile"
 			}
 		}
-		stage('test'){
+		/*stage('test'){
 		  steps{
 		  	sh "mvn test"
 		  }
@@ -42,6 +42,14 @@ pipeline {
 		  	sh "mvn failsaif:integration-test failsafe:verify"
 		  }
 		
+		}*/
+		
+		stage('Build docker image'){
+			step{
+				script{
+					
+				}
+			}
 		}
 	}
 	

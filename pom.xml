@@ -182,19 +182,19 @@
 					</properties>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>${failsafe.version}</version>
 				<configuration>
-					<!-- JaCoCo must be enabled on target app container -->
-					<!--<argLine>${jacoco.itAgentConfig}</argLine> -->
+					JaCoCo must be enabled on target app container
+					<argLine>${jacoco.itAgentConfig}</argLine>
 					<includes>
-						<!--<include>**/*ApplicationTests.java</include> -->
+						<include>**/*ApplicationTests.java</include>
 						<include>**/*CucumberIntegrationTestCase.java</include>
 					</includes>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<!-- Docker -->
 			<!--<plugin> -->
 			<!--<groupId>com.spotify</groupId> -->
